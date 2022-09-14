@@ -77,6 +77,15 @@ namespace Importar_Marcar
 
                 dvg_despesa.Rows.Add(false, codigo, produto, valor_compra, valor_venda, estoque);
 
+                dvg_despesa.DefaultCellStyle.Font = new Font(dvg_despesa.Font, FontStyle.Bold);
+
+                foreach (DataGridViewRow dvg_linha in dvg_despesa.Rows)
+                if (Convert.ToDouble(dvg_linha.Cells[3].Value) > Convert.ToDouble(dvg_linha.Cells[4].Value))
+                    {
+                        dvg_despesa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                        dvg_despesa.CurrentRow.DefaultCellStyle.BackColor = Color.Red;
+                        dvg_despesa.CurrentRow.DefaultCellStyle.ForeColor = Color.White;
+                    }
             }
 
         }
@@ -115,7 +124,7 @@ namespace Importar_Marcar
 
         private void btn_porcentagem_Click(object sender, EventArgs e)
         {
-            desconto = 20;
+            desconto = 20; //Porcentagem
 
             venda_porcentagem = selecao - (selecao * (desconto / 100));
 
