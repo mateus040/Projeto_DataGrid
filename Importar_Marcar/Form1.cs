@@ -80,7 +80,7 @@ namespace Importar_Marcar
                 dvg_despesa.DefaultCellStyle.Font = new Font(dvg_despesa.Font, FontStyle.Bold);
 
                 foreach (DataGridViewRow dvg_linha in dvg_despesa.Rows)
-                if (Convert.ToDouble(dvg_linha.Cells[3].Value) > Convert.ToDouble(dvg_linha.Cells[4].Value))
+                if (Convert.ToDouble(dvg_linha.Cells[4].Value) < Convert.ToDouble(dvg_linha.Cells[3].Value))
                     {
                         dvg_despesa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                         dvg_despesa.CurrentRow.DefaultCellStyle.BackColor = Color.Red;
