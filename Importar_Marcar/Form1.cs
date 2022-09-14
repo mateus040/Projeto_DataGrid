@@ -134,6 +134,13 @@ namespace Importar_Marcar
 
         }
 
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+            dvg_despesa.Rows.Clear();
+            lbl_selecao.Text = "R$ 0,00";
+            lbl_desconto.Text = "R$ 0,00";
+        }
+
         private void btn_fechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
