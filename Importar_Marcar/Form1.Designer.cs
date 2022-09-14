@@ -34,6 +34,14 @@
             this.dvg_despesa = new System.Windows.Forms.DataGridView();
             this.ofdArquivo = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_total = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_selecao = new System.Windows.Forms.Label();
+            this.btn_porcentagem = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_desconto = new System.Windows.Forms.Label();
+            this.btn_fechar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvg_despesa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,11 +92,104 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 595);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Total:";
+            // 
+            // lbl_total
+            // 
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_total.Location = new System.Drawing.Point(81, 591);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(101, 29);
+            this.lbl_total.TabIndex = 5;
+            this.lbl_total.Text = "R$ 0,00";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(249, 595);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Seleção:";
+            // 
+            // lbl_selecao
+            // 
+            this.lbl_selecao.AutoSize = true;
+            this.lbl_selecao.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_selecao.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_selecao.Location = new System.Drawing.Point(334, 590);
+            this.lbl_selecao.Name = "lbl_selecao";
+            this.lbl_selecao.Size = new System.Drawing.Size(101, 29);
+            this.lbl_selecao.TabIndex = 7;
+            this.lbl_selecao.Text = "R$ 0,00";
+            // 
+            // btn_porcentagem
+            // 
+            this.btn_porcentagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_porcentagem.Location = new System.Drawing.Point(917, 583);
+            this.btn_porcentagem.Name = "btn_porcentagem";
+            this.btn_porcentagem.Size = new System.Drawing.Size(120, 36);
+            this.btn_porcentagem.TabIndex = 8;
+            this.btn_porcentagem.Text = "Adicionar %";
+            this.btn_porcentagem.UseVisualStyleBackColor = true;
+            this.btn_porcentagem.Click += new System.EventHandler(this.btn_porcentagem_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(516, 595);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 20);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Desconto:";
+            // 
+            // lbl_desconto
+            // 
+            this.lbl_desconto.AutoSize = true;
+            this.lbl_desconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_desconto.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_desconto.Location = new System.Drawing.Point(613, 591);
+            this.lbl_desconto.Name = "lbl_desconto";
+            this.lbl_desconto.Size = new System.Drawing.Size(101, 29);
+            this.lbl_desconto.TabIndex = 10;
+            this.lbl_desconto.Text = "R$ 0,00";
+            // 
+            // btn_fechar
+            // 
+            this.btn_fechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fechar.Location = new System.Drawing.Point(1078, 583);
+            this.btn_fechar.Name = "btn_fechar";
+            this.btn_fechar.Size = new System.Drawing.Size(120, 36);
+            this.btn_fechar.TabIndex = 11;
+            this.btn_fechar.Text = "Fechar";
+            this.btn_fechar.UseVisualStyleBackColor = true;
+            this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1217, 638);
+            this.Controls.Add(this.btn_fechar);
+            this.Controls.Add(this.lbl_desconto);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btn_porcentagem);
+            this.Controls.Add(this.lbl_selecao);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_total);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dvg_despesa);
             this.Controls.Add(this.btn_Desmarcar);
             this.Controls.Add(this.btn_Marcar);
@@ -98,6 +199,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvg_despesa)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -109,6 +211,14 @@
         private System.Windows.Forms.DataGridView dvg_despesa;
         private System.Windows.Forms.OpenFileDialog ofdArquivo;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_selecao;
+        private System.Windows.Forms.Button btn_porcentagem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_desconto;
+        private System.Windows.Forms.Button btn_fechar;
     }
 }
 

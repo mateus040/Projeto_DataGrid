@@ -18,6 +18,8 @@ namespace Importar_Marcar
             InitializeComponent();
         }
 
+        double venda_porcentagem, selecao, desconto;
+
         private void Form1_Load(object sender, EventArgs e)
         {
             // Cria as coluunas definindo o tipo de cada uma
@@ -74,7 +76,9 @@ namespace Importar_Marcar
                 int estoque = int.Parse(dados[4]);
 
                 dvg_despesa.Rows.Add(false, codigo, produto, valor_compra, valor_venda, estoque);
+
             }
+
         }
 
         private void dvg_despesa_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -84,25 +88,57 @@ namespace Importar_Marcar
                 if (Convert.ToBoolean(dvg_despesa.CurrentRow.Cells[0].Value) == false)
                 {
                     dvg_despesa.CurrentRow.Cells[0].Value = true;
+                    selecao += Convert.ToDouble(dvg_despesa.CurrentRow.Cells[4].Value);
                 }
                 else
                 {
                     dvg_despesa.CurrentRow.Cells[0].Value = false;
+                    selecao -= Convert.ToDouble(dvg_despesa.CurrentRow.Cells[4].Value);
+                    
                 }
+                lbl_selecao.Text = selecao.ToString("C");
             }
         }
 
 
         private void btn_Marcar_Click(object sender, EventArgs e)
         {
+            selecao = 0;
             foreach (DataGridViewRow linha in dvg_despesa.Rows)
+            {
                 linha.Cells[0].Value = true;
+                selecao += Convert.ToDouble(linha.Cells[4].Value);
+            }
+            lbl_selecao.Text = selecao.ToString("C");
+
         }
+
+        private void btn_porcentagem_Click(object sender, EventArgs e)
+        {
+            desconto = 20;
+
+            venda_porcentagem = selecao - (selecao * (desconto / 100));
+
+            lbl_desconto.Text = venda_porcentagem.ToString("C");
+        }
+
 
         private void btn_Desmarcar_Click(object sender, EventArgs e)
         {
+            selecao = 0;
+            venda_porcentagem = 0;
             foreach (DataGridViewRow linha in dvg_despesa.Rows)
                 linha.Cells[0].Value = false;
+            lbl_selecao.Text = selecao.ToString("C");
+            lbl_desconto.Text = venda_porcentagem.ToString("C");
+
         }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
     }
 }
